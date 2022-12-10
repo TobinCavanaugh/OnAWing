@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2517402133902398532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2517402133902398535}
+  - component: {fileID: 2517402133902398534}
+  - component: {fileID: 2517402133902398533}
+  m_Layer: 0
+  m_Name: ISLAND GENERATOR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2517402133902398535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517402133902398532}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -107.39, y: 3.2, z: 93.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2517402133902398534
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517402133902398532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18, y: 2.5207846, z: 18}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2517402133902398533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517402133902398532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0aee9760c4015e42959706dc49a7669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCol: {fileID: 2517402133902398534}
+  raycastDistance: 50
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
+  grassCount: 100
+  prefabCount: 25
+  prefabs:
+  - {fileID: 529443074694974133, guid: 7c3da27c443532a4db4c0f807e97d673, type: 3}
+  - {fileID: 423544095272341352, guid: 4e67ca50513591b44bdd2387f2fdcbd6, type: 3}
+  - {fileID: 6151052391309850165, guid: f6ae19dc4f765084f8dcfc36d896738e, type: 3}
+  - {fileID: 4382683343690540089, guid: eebad38b44f1ba440ab059853d5e98de, type: 3}
+  - {fileID: 5771855857582692064, guid: 49fa87279fa17fa49ba67300ea902300, type: 3}
+  - {fileID: 8017811300897393413, guid: d77376370b19e5f4eb8eebf8c6049deb, type: 3}
+  - {fileID: 7723347059438326911, guid: 7f740ba28b41d0e4da7f78e6dafac7e2, type: 3}
+  - {fileID: 554465079593333029, guid: ae1de8257c62d6a499935914cfcbf717, type: 3}
+  - {fileID: 8535882371719331453, guid: 79312b5d8c205094ebbeb1815ae009a1, type: 3}
+  - {fileID: 1701412126578572822, guid: f507d486a7f67eb449f6f98b7d11ac6c, type: 3}
+  - {fileID: 554465079593333029, guid: ae1de8257c62d6a499935914cfcbf717, type: 3}
+  grassPrefab: {fileID: 2803652465374576050, guid: 11adffe718dfb451482e7be35d70b90a,
+    type: 3}
