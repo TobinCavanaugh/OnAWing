@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 6494740008691651083}
   - component: {fileID: 6494740008691651084}
   - component: {fileID: 6494740008691651085}
+  - component: {fileID: -5369636140454131098}
   m_Layer: 3
   m_Name: Island 0 - gen (8915)
   m_TagString: Untagged
@@ -159,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 6494740008691651087}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 92, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6494740009119195903}
@@ -233,6 +234,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3962784284330235120, guid: f102d1a9cdc9e9947a7b083f86b488ae, type: 3}
+--- !u!205 &-5369636140454131098
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494740008691651087}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &6494740009119195776
 GameObject:
   m_ObjectHideFlags: 0

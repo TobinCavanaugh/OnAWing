@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Fill_Texture:
-        m_Texture: {fileID: 2800000, guid: 0f1bc541d4bda47399f10e5dd0b961c2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6b9de0ee7846b4da7b4285be69886978, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Shape_Texture:
@@ -123,7 +123,7 @@ Material:
     - Billboard_Scale: 0.33
     - Clip_Threshold: 0.118
     - Fill_Impact: 0.5
-    - Fill_Scale: 0
+    - Fill_Scale: 2.37
     - Fresnel_Power: 1
     - Fresnel_Sharpness: 0.5
     - Header_Fresnel: 0
@@ -180,7 +180,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimEnabled: 0
     - _SelfShadingSize: 0
-    - _ShadowStrength: 0.128
+    - _ShadowStrength: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 0

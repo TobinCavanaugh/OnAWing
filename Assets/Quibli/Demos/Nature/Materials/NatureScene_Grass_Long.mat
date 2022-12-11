@@ -60,7 +60,7 @@ Material:
     - _AlphaClipThreshold: 0.624
     - _GustEnabled: 1
     - _GustFrequency: 0.5
-    - _GustIntensity: 0.25
+    - _GustIntensity: 0.025
     - _GustSpeed: 0.5
     - _PatchesAmount: 0.25
     - _PatchesBluriness: 0.04
@@ -76,16 +76,16 @@ Material:
     - _WindDirection: -1
     - _WindEnabled: 1
     - _WindFrequency: 1
-    - _WindIntensity: 1
+    - _WindIntensity: 0.07
     - _WindNoise: 1
     - _WindSpeed: 0.1
     m_Colors:
     - Color_8625870c808d4f1b93a120fb2366b73e: {r: 0, g: 0, b: 0, a: 0}
     - Color_fa7bfd953c0f468faf964c3a5545c86d: {r: 0, g: 0, b: 0, a: 1}
-    - _ColorBottom: {r: 0.14117648, g: 0.427451, b: 0.1764706, a: 1}
-    - _ColorTop: {r: 0.45882356, g: 0.6745098, b: 0.21176472, a: 1}
+    - _ColorBottom: {r: 0.14117643, g: 0.42745098, b: 0.17647055, a: 1}
+    - _ColorTop: {r: 0.5529412, g: 0.75294125, b: 0.30980393, a: 1}
     - _GustColor: {r: 0.30588222, g: 1, b: 0, a: 0.4}
-    - _PatchesColor: {r: 0.38259512, g: 0.5660378, b: 0.20558918, a: 1}
+    - _PatchesColor: {r: 0.5529412, g: 0.75294125, b: 0.31764707, a: 1}
     - _PatchesOffset: {r: -9, g: 9.4, b: 0, a: 0}
     - _SecondaryColor: {r: 0.937255, g: 0.7568628, b: 0.24705875, a: 1}
   m_BuildTextureStacks: []

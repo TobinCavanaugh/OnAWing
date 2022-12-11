@@ -38,5 +38,10 @@ namespace DefaultNamespace
                 isWarm = false;
             }
         }
+
+        public void CoolNoBoost()
+        {
+            isWarm = false;
+        }
     }
 }
