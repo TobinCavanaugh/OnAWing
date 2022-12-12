@@ -16863,7 +16863,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3e717bdd2c4c359e2488953846f948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spineFollower: {fileID: 1067273799}
+  splineFollower: {fileID: 1067273799}
+  defaultSpeed: 45
+  boostedSpeed: 70
+  valueLerpSpeed: 2
+  boostTimeLength: 3
+  curTime: 0
   moveMult: 45
   lerpSpeed: 0
   maxRotation: 28
@@ -16875,8 +16880,9 @@ MonoBehaviour:
   birdBody: {fileID: 92195168}
   animator: {fileID: 6537997798141054156}
   idleClip: Idle
-  flapClip: WingFlap
+  flapClip: WingUp
   crossfadeTime: 0.1
+  birdAnimationController: {fileID: 6537997798141054157}
 --- !u!54 &1067273801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26892,6 +26898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3397305365502679632}
   - component: {fileID: 6537997798141054156}
+  - component: {fileID: 6537997798141054157}
   m_Layer: 0
   m_Name: NewBirdArmature
   m_TagString: Untagged
@@ -26919,6 +26926,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6537997798141054157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537997798141054155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef229a050f8d8418df38da8744a974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 7d0d5b94798c9a648a9f8e8e199327a5, type: 2}
+  wingInPosition: 0
+  defaultColor: {r: 8.47419, g: 8.47419, b: 8.47419, a: 1}
+  chargedColor: {r: 0.66104066, g: 9.419505, b: 10.780043, a: 1}
+  colorChangeTime: 0.19
 --- !u!4 &6592944588345048946
 Transform:
   m_ObjectHideFlags: 0
