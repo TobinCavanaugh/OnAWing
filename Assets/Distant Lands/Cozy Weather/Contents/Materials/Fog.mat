@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fog
-  m_Shader: {fileID: 4800000, guid: 64bcfabbbe8119648b5596522462f22a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6490db4c7a37d8349b85b261b7ff5cea, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -84,23 +84,23 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlareSquish: 1
-    - _FogColorStart1: 4.9
-    - _FogColorStart2: 5
-    - _FogColorStart3: 10
-    - _FogColorStart4: 30
+    - _FogColorStart1: 36.800003
+    - _FogColorStart2: 36.9
+    - _FogColorStart3: 40.6
+    - _FogColorStart4: 50
     - _FogDensity: 2
-    - _FogDepthMultiplier: 0.61
+    - _FogDepthMultiplier: 0.8343
     - _FogDepthMultiplier1: 1
     - _FogIntensity: 1
     - _FogIntensity1: 1
-    - _FogOffset: 0.86
+    - _FogOffset: 2
     - _FogOffset1: 1
     - _FogSmoothness: 100
     - _FogSmoothness1: 100
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightFalloff: 8.5
+    - _LightFalloff: 8.238546
     - _LightFalloff1: 10
     - _LightIntensity: 1
     - _Metallic: 0
@@ -119,13 +119,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
-    - _FogColor2: {r: 0, g: 0.1738163, b: 0.1981132, a: 0.13725491}
-    - _FogColor3: {r: 0.0117579065, g: 0.1862616, b: 0.25485602, a: 0.5019608}
-    - _FogColor4: {r: 0.011764695, g: 0.22184484, b: 0.3882353, a: 0.75686276}
-    - _FogColor5: {r: 0.3906945, g: 0.67873824, b: 0.85947156, a: 1}
+    - _FogColor2: {r: 0.00051163265, g: 0.14545621, b: 0.16569708, a: 0.13725491}
+    - _FogColor3: {r: 0.010684672, g: 0.16072825, b: 0.22142091, a: 0.5019608}
+    - _FogColor4: {r: 0.024136504, g: 0.21097983, b: 0.35994965, a: 0.75686276}
+    - _FogColor5: {r: 0.63869405, g: 0.8221992, b: 0.8928244, a: 1}
     - _FogSquish: {r: 1, g: 3.93, b: 0, a: 0}
-    - _LightColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
+    - _LightColor: {r: 1.8172755, g: 1.1485976, b: 1.015655, a: 1}
     - _LightColor1: {r: 11.924528, g: 32, b: 29.818542, a: 0}
-    - _SunDirection: {r: -0.6367153, g: 0.71326506, b: 0.29299694, a: 0}
+    - _SunDirection: {r: -0.91999364, g: 0.31661826, b: 0.2310084, a: 0}
     - _SunDirection1: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

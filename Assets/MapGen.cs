@@ -19,10 +19,18 @@ public class MapGen : MonoBehaviour
 
     public float yOffset = -10f;
 
+    [Space]
+
+    public List<GameObject> cloudPrefabs;
+    public float cloudMaxOffset = 50f;
+    public float cloudMinOffset = 10f;
+    public float cloudStep = .1f;
+
     [Button]
     public void GenerateMap()
     {
         var parent = new GameObject("Map Parent").transform;
+        var cloudParent = new GameObject("Cloud Parent").transform;
         
         for (float i = 0; i < 1f; i += step)
         {
@@ -30,7 +38,34 @@ public class MapGen : MonoBehaviour
             t.parent = parent;
             t.position = splineComputer.EvaluatePosition(i) + RandomOffset();
         }
+
+        for (float c = 0; c < 1f; c += cloudStep)
+        {
+            var t =
+                (PrefabUtility.InstantiatePrefab(cloudPrefabs[Random.Range(0, cloudPrefabs.Count - 1)]) as GameObject)
+                .transform;
+            t.parent = cloudParent;
+            t.position = splineComputer.EvaluatePosition(c) + CloudOffset();
+        }
             
+    }
+
+    private Vector3 CloudOffset()
+    {
+        Debug.Log(GetRandMult());
+        return new Vector3(GetRandMult() * Random.Range(cloudMinOffset, cloudMaxOffset),
+            GetRandMult() * Random.Range(cloudMinOffset, cloudMaxOffset),
+            GetRandMult() * Random.Range(cloudMinOffset, cloudMaxOffset));
+    }
+
+    private float GetRandMult()
+    {
+        var iNum = Random.Range(-50, 50);
+        if (iNum == 0)
+        {
+            iNum++;
+        }
+        return iNum / (int)Mathf.Abs(iNum);
     }
 
     private Vector3 RandomOffset()
