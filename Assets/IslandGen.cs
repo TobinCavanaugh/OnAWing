@@ -10,6 +10,8 @@ using Random = UnityEngine.Random;
 public class IslandGen : MonoBehaviour
 {
 
+    #if UNITY_EDITOR
+    
     public BoxCollider boxCol;
     public float raycastDistance = 50f;
 
@@ -121,4 +123,6 @@ public class IslandGen : MonoBehaviour
 
         return GetPosition();
     }
+    
+    #endif
 }

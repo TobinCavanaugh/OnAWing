@@ -9,6 +9,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class MapGen : MonoBehaviour
 {
+    #if UNITY_EDITOR
+    
     public SplineComputer splineComputer;
 
     public float step = 1f;
@@ -72,4 +74,6 @@ public class MapGen : MonoBehaviour
     {
         return new Vector3(Random.Range(-maxOffset, maxOffset), yOffset, Random.Range(-maxOffset, maxOffset));
     }
+    
+    #endif
 }

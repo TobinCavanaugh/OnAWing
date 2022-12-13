@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
@@ -14,8 +15,7 @@ public class BirdAnimationController : MonoBehaviour
     [ColorUsage(true, true)] 
     public Color chargedColor;
 
-    public float colorChangeTime = 1.5f;
-    private static readonly int Property = Shader.PropertyToID("_BaseColor");
+    public float colorLerpSpeed = 1.0f;
 
     public void WingUp()
     {
@@ -27,28 +27,39 @@ public class BirdAnimationController : MonoBehaviour
         wingInPosition = false;
     }
 
-    private Color colorVal;
-    private Tweener tweener;
-    private void Start()
+    [SerializeField, ReadOnly]
+    private bool isCharging = false;
+
+    [SerializeField, ReadOnly]
+    private Color targetColor;
+    private void Update()
     {
-        tweener = DOVirtual.Color(material.GetColor(Property), colorVal, colorChangeTime, x =>
+        var t = defaultColor;
+        if (isCharging)
         {
-            material.SetColor(Property, x);
-        });        
+            t = chargedColor;
+        }
+        else
+        {
+            t = defaultColor;
+        }
+
+        targetColor = Color.Lerp(targetColor, t, Time.deltaTime * colorLerpSpeed);
+        material.SetColor("_BaseColor", targetColor);
+        material.SetColor("_EmissionColor", targetColor);
+        
+        //material.SetColor(Property,
+        //         Color.Lerp(material.GetColor(Property), lerpColor, Time.deltaTime * colorLerpSpeed));
     }
 
 
     public void StartCharge()
     {
-        colorVal = chargedColor;
-        tweener.Play();
-        tweener.Restart();
+        isCharging = true;
     }
 
     public void EndCharge()
     {
-        colorVal = defaultColor;
-        tweener.Play();
-        tweener.Restart();
+        isCharging = false;
     }
 }
