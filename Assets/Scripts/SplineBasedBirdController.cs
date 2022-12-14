@@ -1,4 +1,5 @@
-﻿using Dreamteck.Splines;
+﻿using System;
+using Dreamteck.Splines;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,18 +9,17 @@ namespace DefaultNamespace
     public class SplineBasedBirdController : MonoBehaviour
     {
         public SplineFollower splineFollower;
-        
-        public float defaultSpeed = 45;
+        public float splinePosLerpSpeed = 1f;
+        public float splineRotLerpSpeed = 1f;
         public float boostedSpeed = 55f;
         public float valueLerpSpeed = 2f;
         public float boostTimeLength = 3f;
+        public float defaultSpeed = 45f;
         
         [SerializeField, ReadOnly]
         private float curTime = 0;
         
         [Space]
-        public float moveMult = .01f;
-        public float lerpSpeed = .1f;
         public float maxRotation = 45f;
         public float lerpRot = .1f;
         
@@ -30,11 +30,17 @@ namespace DefaultNamespace
         public Camera gameCamera;
         public Transform birdBody;
 
+        [Space] 
+        public float airCurrentBoostAmount = 2f;
+
+        public Vector3 curOffset;
+
         [Space]
         public Animator animator;
         public string idleClip = "BirdIdle";
         public string flapClip = "BirdWarm";
         public float crossfadeTime = .1f;
+        
 
         [Space]
         public BirdAnimationController birdAnimationController;
@@ -42,17 +48,16 @@ namespace DefaultNamespace
         private Vector3 mouseInput;
 
         private float lerpedValue = 0;
+        private float curMoveSpeed = 0f;
+
         private void Update()
         {
-            splineFollower.followSpeed = Mathf.Lerp(splineFollower.followSpeed, Input.GetAxis("Vertical") * moveMult,
-                lerpSpeed * Time.deltaTime);
-
             mouseInput = GetMouseInput();
             birdBody.localPosition =
                 Vector3.Lerp(birdBody.localPosition, gameCamera.ScreenToViewportPoint(mouseInput), Time.deltaTime * posLerpSpeed);
 
-            float followSpeed = defaultSpeed;
-            
+            curMoveSpeed = defaultSpeed;
+            //Boosting
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName(idleClip))
@@ -62,25 +67,34 @@ namespace DefaultNamespace
                 if (birdAnimationController.wingInPosition)
                 {
                     curTime = 0;
-                    followSpeed = boostedSpeed;
+                    curMoveSpeed = boostedSpeed;
                 }
             }
 
+            //For Boost
             curTime += Time.deltaTime;
-
             if (curTime <= boostTimeLength)
             {
-                followSpeed = boostedSpeed;
+                curMoveSpeed = boostedSpeed;
             }
-            
-            
 
-            splineFollower.followSpeed = Mathf.Lerp(splineFollower.followSpeed, followSpeed, Time.deltaTime * valueLerpSpeed);
             
+            splineFollower.followSpeed = Mathf.Lerp(splineFollower.followSpeed, curMoveSpeed, Time.deltaTime * valueLerpSpeed);
+            
+            
+            //Bird body movement and rotation
             var xrot = (mouseInput.normalized.x) * maxRotation;
             var bblea = birdBody.localEulerAngles;
             lerpedValue = Mathf.Lerp(lerpedValue, xrot, Time.deltaTime * lerpRot);
             birdBody.localEulerAngles = new(bblea.x, bblea.y, lerpedValue);
+
+            
+            //Following splinefollower
+            transform.position = Vector3.Lerp(transform.position, splineFollower.transform.position + curOffset,
+                Time.deltaTime * splinePosLerpSpeed);
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation, splineFollower.transform.rotation,
+                Time.deltaTime * splineRotLerpSpeed);
         }
 
         private Vector3 GetMouseInput()
