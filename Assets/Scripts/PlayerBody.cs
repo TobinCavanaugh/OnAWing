@@ -1,4 +1,6 @@
 ﻿using System;
+using DG.Tweening;
+using MilkShake;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -10,6 +12,8 @@ namespace DefaultNamespace
         public float lerpSpeed = 1f;
         public float boostMult = 15f;
         private float curTime = 0;
+        public AnimationCurve boostCurve;
+        public ShakePreset boostShake;
 
         private void Update()
         {
@@ -22,12 +26,25 @@ namespace DefaultNamespace
             }
         }
 
+        private Tweener _tweener;
+        
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out AirCurrent airCurrent))
             {
                 curTime = 0;
-                splineBasedBirdController.curOffset += airCurrent.GetBoostDirection() * boostMult;
+                
+                _tweener?.Kill();
+                _tweener = DOVirtual.Vector3(splineBasedBirdController.curOffset,
+                    airCurrent.GetBoostDirection() * boostMult,
+                    timeBeforeReturn,
+                    x =>
+                    {
+                        splineBasedBirdController.curOffset = x;
+                    })
+                    .SetEase(boostCurve);
+
+                Shaker.GlobalShakers[0].Shake(boostShake);
             }
         }
     }

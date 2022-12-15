@@ -32,6 +32,9 @@ public class BirdAnimationController : MonoBehaviour
 
     [SerializeField, ReadOnly]
     private Color targetColor;
+
+    public Animator animator;
+    
     private void Update()
     {
         var t = defaultColor;

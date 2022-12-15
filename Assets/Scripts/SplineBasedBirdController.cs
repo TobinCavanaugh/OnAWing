@@ -1,5 +1,6 @@
 ﻿using System;
 using Dreamteck.Splines;
+using MilkShake;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,6 +16,7 @@ namespace DefaultNamespace
         public float valueLerpSpeed = 2f;
         public float boostTimeLength = 3f;
         public float defaultSpeed = 45f;
+        public ShakePreset boostShake;
         
         [SerializeField, ReadOnly]
         private float curTime = 0;
@@ -49,6 +51,7 @@ namespace DefaultNamespace
 
         private float lerpedValue = 0;
         private float curMoveSpeed = 0f;
+        private static readonly int DoBoost = Animator.StringToHash("DoBoost");
 
         private void Update()
         {
@@ -57,6 +60,7 @@ namespace DefaultNamespace
                 Vector3.Lerp(birdBody.localPosition, gameCamera.ScreenToViewportPoint(mouseInput), Time.deltaTime * posLerpSpeed);
 
             curMoveSpeed = defaultSpeed;
+            
             //Boosting
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -67,7 +71,13 @@ namespace DefaultNamespace
                 if (birdAnimationController.wingInPosition)
                 {
                     curTime = 0;
+                    animator.SetBool(DoBoost, true);
                     curMoveSpeed = boostedSpeed;
+                    Shaker.GlobalShakers[0].Shake(boostShake);
+                }
+                else
+                {
+                    animator.SetBool(DoBoost, false);
                 }
             }
 

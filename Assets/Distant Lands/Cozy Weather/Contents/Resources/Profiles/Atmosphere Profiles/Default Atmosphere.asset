@@ -159,7 +159,7 @@ MonoBehaviour:
       atime3: 42598
       atime4: 49151
       atime5: 52428
-      atime6: 55705
+      atime6: 52428
       atime7: 0
       m_Mode: 0
       m_NumColorKeys: 7
@@ -189,7 +189,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   cloudHighlightColor:
     mode: 0
     colorVal: {r: 0.33579564, g: 0.9245283, b: 0.39831075, a: 1}
@@ -247,7 +247,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   highAltitudeCloudColor:
     mode: 0
     colorVal: {r: 0.33579564, g: 0.9245283, b: 0.39831075, a: 1}
@@ -305,7 +305,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   sunlightColor:
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -2173,7 +2173,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    floatVal: 0.81
+    floatVal: 0.23
     curveVal:
       serializedVersion: 2
       m_Curve:
@@ -2783,7 +2783,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   clippingThreshold:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -2899,7 +2899,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   cloudDetailScale:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -3364,7 +3364,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   spherize:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -3422,7 +3422,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   shadowDistance:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -3480,7 +3480,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   cloudThickness:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
@@ -3538,7 +3538,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    systemContainsProp: 1
+    systemContainsProp: 0
   textureAmount:
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
