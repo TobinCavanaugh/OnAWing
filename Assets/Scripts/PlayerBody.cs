@@ -2,6 +2,7 @@
 using DG.Tweening;
 using MilkShake;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
@@ -14,6 +15,8 @@ namespace DefaultNamespace
         private float curTime = 0;
         public AnimationCurve boostCurve;
         public ShakePreset boostShake;
+
+        
 
         private void Update()
         {

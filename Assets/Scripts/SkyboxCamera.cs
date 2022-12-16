@@ -1,14 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkyboxCamera : MonoBehaviour
 {
-    public Transform mainCam;
-    
+    public Camera skyboxCam;
+    public Camera mainCam;
+
+    private Transform cTransform;
+    private void Start()
+    {
+        cTransform = mainCam.transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = mainCam.rotation;
+        skyboxCam.fieldOfView = mainCam.fieldOfView;
+        transform.rotation = cTransform.rotation;
     }
 }

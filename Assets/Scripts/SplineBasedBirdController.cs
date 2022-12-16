@@ -31,10 +31,7 @@ namespace DefaultNamespace
         public float posYMult = 9;
         public Camera gameCamera;
         public Transform birdBody;
-
-        [Space] 
-        public float airCurrentBoostAmount = 2f;
-
+        
         public Vector3 curOffset;
 
         [Space]
@@ -42,7 +39,8 @@ namespace DefaultNamespace
         public string idleClip = "BirdIdle";
         public string flapClip = "BirdWarm";
         public float crossfadeTime = .1f;
-        
+
+        public CameraFOVPunch cameraFOVPunch;
 
         [Space]
         public BirdAnimationController birdAnimationController;
@@ -74,6 +72,7 @@ namespace DefaultNamespace
                     animator.SetBool(DoBoost, true);
                     curMoveSpeed = boostedSpeed;
                     Shaker.GlobalShakers[0].Shake(boostShake);
+                    //cameraFOVPunch.Punch();
                 }
                 else
                 {
