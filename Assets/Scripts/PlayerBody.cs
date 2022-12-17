@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using MilkShake;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -16,7 +18,14 @@ namespace DefaultNamespace
         public AnimationCurve boostCurve;
         public ShakePreset boostShake;
 
-        
+        [Space]
+        public float slowedSpeed = 35;
+        public float slowTime = .5f;
+        public float slowDelay = 3f;
+        public AnimationCurve slowCurve = AnimationCurve.Linear(0,0, 1,1);
+
+        public float returnTime = 2f;
+        public AnimationCurve returnCurve = AnimationCurve.Linear(0,0, 1,1);
 
         private void Update()
         {
@@ -49,6 +58,36 @@ namespace DefaultNamespace
 
                 Shaker.GlobalShakers[0].Shake(boostShake);
             }
+            
+            if (other.TryGetComponent(out FeatherPickup featherPickup))
+            {
+                featherPickup.transform.DOScale(Vector3.zero, 1f).OnComplete(() => featherPickup.gameObject.SetActive(false));
+            }
+        }
+
+        private Tweener _slowTweener;
+        private void OnCollisionEnter(Collision collision)
+        {
+            _slowTweener?.Kill();
+
+            StopAllCoroutines();
+            DOVirtual.Float(splineBasedBirdController.slowSpeed, slowedSpeed, slowTime, value =>
+            {
+                splineBasedBirdController.slowSpeed = value;
+            }).SetEase(slowCurve).OnComplete(() => StartCoroutine(SlowReturn()));
+        }
+
+        private Tweener _returnTweener;
+        private IEnumerator SlowReturn()
+        {
+            _returnTweener?.Kill();
+
+            yield return new WaitForSeconds(slowDelay);
+
+            DOVirtual.Float(splineBasedBirdController.slowSpeed, 0, returnTime, value =>
+            {
+                splineBasedBirdController.slowSpeed = value;
+            }).SetEase(returnCurve);
         }
     }
 }

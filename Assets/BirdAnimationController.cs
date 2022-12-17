@@ -42,7 +42,9 @@ public class BirdAnimationController : MonoBehaviour
     {
         var v = chargeSlider.DOValue(10, chargeSliderUpTime, false);
         v.SetEase(chargeUp);
-        cameraFOVPunch.Punch(cameraFOVPunch.presets[0], cameraFOVPunch.presets[1]);
+        
+        cameraFOVPunch.CameraPunch(0, true);
+        //cameraFOVPunch.Punch(cameraFOVPunch.presets[0], cameraFOVPunch.presets[1]);
     }
 
     public void SliderDown()

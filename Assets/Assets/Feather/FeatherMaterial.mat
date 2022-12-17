@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!28 &-5474675816185935653
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: z__ShadingGradientTextureTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.2235294133424759,"time":0.0},{"alpha":0.1568627506494522,"time":1.0}]}
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_MipsStripped: 0
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMasterTextureLimit: 0
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 1024
+  _typelessdata: 39ffffff39ffffff39ffffff39ffffff39ffffff39ffffff39ffffff39ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff38ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff37ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff36ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff35ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff34ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff33ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff32ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff31ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff30ffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2fffffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2effffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2dffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2cffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2bffffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff2affffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff29ffffff28ffffff28ffffff28ffffff28ffffff28ffffff28ffffff28ffffff28ffffff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!114 &-907451920161949370
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -38,6 +85,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Fill_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Shape_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: df611017bc04e4f458f0f583a8706ece, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -78,6 +133,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShadingGradientTexture:
+        m_Texture: {fileID: -5474675816185935653}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -96,7 +155,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - BILLBOARD_FACE_CAMERA_POSITION: 0
+    - BILLBOARD_ROTATION: 0
+    - Billboard_Scale: 1
+    - Clip_Threshold: 0.5
+    - Fill_Impact: 0
+    - Fill_Scale: 1
+    - Fresnel_Power: 1
+    - Fresnel_Sharpness: 0.5
+    - Offset_Along_Normal: 0
+    - Space_0: 0
+    - Space_1: 0
+    - Space_2: 0
+    - Space_3: 0
+    - Wind: 0
+    - Wind_Speed: 0.1
+    - Wind_Strength: 0.2
+    - Wind_Turbulence: 1
     - _AlphaClip: 0
+    - _AlphaClipThreshold: 0.5
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -107,15 +184,27 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnvironmentReflections: 1
+    - _FRESNEL: 0
+    - _FresnelToggleUpgrade: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
+    - _GustEnabled: 1
+    - _GustFrequency: 0.2
+    - _GustIntensity: 0.024
+    - _GustSpeed: 0.2
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PatchesBluriness: 0.2
+    - _PatchesEnabled: 0
+    - _PatchesScale: 0.5
+    - _PatchesThreshold: 0.5
+    - _QueueControl: -1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ShadowStrength: 0
     - _Shininess: 0
     - _Smoothness: 0.5
     - _SmoothnessSource: 0
@@ -124,11 +213,27 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Surface: 1
+    - _USE_FILL_TEXTURE: 1
+    - _WIND: 0
+    - _WindDirection: 0
+    - _WindEnabled: 1
+    - _WindFrequency: 1
+    - _WindIntensity: 0.08
+    - _WindNoise: 1
+    - _WindSpeed: 1.3
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
+    - Color_fa7bfd953c0f468faf964c3a5545c86d: {r: 1, g: 1, b: 1, a: 1}
+    - Fresnel_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - Wind_Direction: {r: 1, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0.7529412}
     - _Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0.7529412}
+    - _ColorBottom: {r: 1, g: 1, b: 1, a: 0}
+    - _ColorTop: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 4.237094, g: 4.237096, b: 4.237096, a: 1}
+    - _GustColor: {r: 0.7877358, g: 1, b: 0.98617876, a: 1}
+    - _PatchesColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PatchesOffset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 0.5}
   m_BuildTextureStacks: []

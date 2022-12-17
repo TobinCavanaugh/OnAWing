@@ -1,43 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class CameraFOVPunch : MonoBehaviour
     {
-        public float defaultFOV = 60f;
         public Camera mainCamera;
 
         public List<CameraPunch> presets = new();
 
         public CameraPunch returnPunch;
-        
-        public void Punch(CameraPunch punch, CameraPunch followUp = null)
+
+        public float lerpSpeed = 2f;
+
+        [ReadOnly]
+        public float targetFOV = 60;
+
+
+        private Tweener _tweener;
+
+        private void Update()
         {
-            punch.Punch(mainCamera, followUp);
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, Time.deltaTime * lerpSpeed);
         }
-        
-        public void Punch(int preset, int followUp = -1)
+
+        public void CameraPunch(int index, bool autoReturn)
         {
-            CameraPunch fu = null;
-            if (followUp <= presets.Count - 1)
+            CameraPunch(presets[index], autoReturn);
+        }
+
+        public void CameraPunch(CameraPunch preset, bool autoReturn)
+        {
+            _tweener?.Kill();
+            
+            TweenCallback tc = null;
+            if (autoReturn)
             {
-                fu = presets[followUp];
+                tc = () =>
+                {
+                    Return();
+                };
             }
 
-            Punch(presets[preset], fu);
+            _tweener = DOVirtual.Float(mainCamera.fieldOfView, preset.punchFOV, preset.punchTime,
+                f =>
+                {
+                    mainCamera.fieldOfView = f;
+                }).SetEase(preset.punchCurve).OnComplete(() => tc?.Invoke());
         }
 
         public void Return()
         {
-            returnPunch.Punch(mainCamera);
-
+            CameraPunch(returnPunch, false);
+            //returnPunch.Punch(mainCamera);
         }
-        
-        
-            
     }
 
     [Serializable]
@@ -46,13 +65,5 @@ namespace DefaultNamespace
         public AnimationCurve punchCurve = AnimationCurve.Linear(0, 0, 1, 1);
         public float punchTime = 1f;
         public float punchFOV = 70f;
-
-        public void Punch(Camera camera, CameraPunch followUp = null)
-        {
-            DOVirtual.Float(camera.fieldOfView, punchFOV, punchTime, b =>
-            {
-                camera.fieldOfView = b;
-            }).SetEase(punchCurve).OnComplete(() => followUp?.Punch(camera, null));
-        }
     }
 }
