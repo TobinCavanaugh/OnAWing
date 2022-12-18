@@ -57,7 +57,6 @@ Material:
   m_Name: Rock
   m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
   m_ValidKeywords:
-  - DR_RIM_ON
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _TEXTUREBLENDINGMODE_MULTIPLY
   m_InvalidKeywords: []
@@ -188,9 +187,9 @@ Material:
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.834
     - _FlatRimLightAlign: 0
-    - _FlatRimSize: 0
-    - _FlatSpecularEdgeSmoothness: 1
-    - _FlatSpecularSize: 0.271
+    - _FlatRimSize: 0.345
+    - _FlatSpecularEdgeSmoothness: 0
+    - _FlatSpecularSize: 0.74
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -217,7 +216,7 @@ Material:
     - _PuddleScale: 0.4
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimEnabled: 1
+    - _RimEnabled: 0
     - _SelfShadingSize: 1
     - _Smoothness: 0
     - _SmoothnessMultiplier: 0
@@ -243,7 +242,7 @@ Material:
     - _BaseColor: {r: 0.45283014, g: 0.45283014, b: 0.45283014, a: 0}
     - _Color: {r: 0.45283008, g: 0.45283008, b: 0.45283008, a: 0}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
-    - _DetailMapColor: {r: 0.59914553, g: 0.9622642, b: 0, a: 1}
+    - _DetailMapColor: {r: 0.57562387, g: 0.9150943, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _FlatSpecularColor: {r: 0.3662527, g: 0.49693304, b: 0.5840786, a: 1}

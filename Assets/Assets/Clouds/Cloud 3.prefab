@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470743839634336675}
+  - component: {fileID: 8303016615387883031}
   m_Layer: 0
   m_Name: Cloud 3
   m_TagString: Untagged
@@ -35,6 +36,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &8303016615387883031
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833249364026615990}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 7.0327215, y: -5.333805, z: -1.403985}
+  m_Size: 19.321703
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.008087949
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5606138224441026524}
+    - renderer: {fileID: 5606138223907021478}
+    - renderer: {fileID: 5606138224132946113}
+    - renderer: {fileID: 4321547205114505271}
+  m_Enabled: 1
 --- !u!1 &5606138223907021657
 GameObject:
   m_ObjectHideFlags: 0

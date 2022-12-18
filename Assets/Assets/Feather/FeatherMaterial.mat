@@ -231,7 +231,7 @@ Material:
     - _Color: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0.7529412}
     - _ColorBottom: {r: 1, g: 1, b: 1, a: 0}
     - _ColorTop: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 4.237094, g: 4.237096, b: 4.237096, a: 1}
+    - _EmissionColor: {r: 33.89676, g: 33.89676, b: 33.89676, a: 1}
     - _GustColor: {r: 0.7877358, g: 1, b: 0.98617876, a: 1}
     - _PatchesColor: {r: 1, g: 1, b: 1, a: 1}
     - _PatchesOffset: {r: 0, g: 0, b: 0, a: 0}
