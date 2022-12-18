@@ -3,6 +3,7 @@ using DG.Tweening;
 using Map;
 using MilkShake;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -20,6 +21,9 @@ namespace Player
         public float slowedSpeed = 35;
         public float slowTime = .5f;
         public float slowDelay = 3f;
+        
+        public float slowedLerpSpeed = 1.5f;
+
         public AnimationCurve slowCurve = AnimationCurve.Linear(0,0, 1,1);
 
         public float returnTime = 2f;
@@ -60,7 +64,6 @@ namespace Player
             if (other.TryGetComponent(out FeatherPickup featherPickup))
             {
                 featherPickup.Pickup(this.transform);
-                //featherPickup.transform.DOScale(Vector3.zero, 1f).OnComplete(() => featherPickup.gameObject.SetActive(false));
             }
         }
 
@@ -70,9 +73,10 @@ namespace Player
             _slowTweener?.Kill();
 
             StopAllCoroutines();
-            DOVirtual.Float(splineBasedBirdController.slowSpeed, slowedSpeed, slowTime, value =>
+            DOVirtual.Float(splineBasedBirdController.slowMult, slowedSpeed, slowTime, value =>
             {
-                splineBasedBirdController.slowSpeed = value;
+                splineBasedBirdController.slowMult = value;
+                splineBasedBirdController.posLerpMult = slowedLerpSpeed;
             }).SetEase(slowCurve).OnComplete(() => StartCoroutine(SlowReturn()));
         }
 
@@ -83,10 +87,13 @@ namespace Player
 
             yield return new WaitForSeconds(slowDelay);
 
-            DOVirtual.Float(splineBasedBirdController.slowSpeed, 0, returnTime, value =>
+            DOVirtual.Float(splineBasedBirdController.slowMult, 1, returnTime, value =>
             {
-                splineBasedBirdController.slowSpeed = value;
-            }).SetEase(returnCurve);
+                splineBasedBirdController.slowMult = value;
+            }).SetEase(returnCurve).OnComplete(() =>
+            {
+                splineBasedBirdController.posLerpMult = 1;
+            });
         }
     }
 }

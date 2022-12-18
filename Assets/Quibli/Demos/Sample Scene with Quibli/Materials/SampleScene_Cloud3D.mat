@@ -160,7 +160,7 @@ Material:
     - BILLBOARD_ROTATION: 0
     - Billboard_Scale: 2.35
     - Clip_Threshold: 0
-    - Fill_Impact: 0.395
+    - Fill_Impact: 0
     - Fill_Scale: 0
     - Fresnel_Power: 0
     - Fresnel_Sharpness: 0.5
@@ -177,7 +177,7 @@ Material:
     - Wind_Strength: 0.2
     - Wind_Turbulence: 1
     - _AlphaClip: 0
-    - _AlphaThreshold: 0.5
+    - _AlphaThreshold: 0.475
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0

@@ -25,7 +25,7 @@ namespace Player
         public float defaultSpeed = 45f;        
 
         [FoldoutGroup(DEFAULT_MOVEMENT), ReadOnly]
-        public float slowSpeed = 0;
+        public float slowMult = 1;
 
         [FormerlySerializedAs("_curMoveSpeed")] [FoldoutGroup(DEFAULT_MOVEMENT), ReadOnly]
         public float curMoveSpeed = 0f;
@@ -62,6 +62,9 @@ namespace Player
         
         [FoldoutGroup(POSITIONING)]
         public float posLerpSpeed = 5f;
+
+        [FoldoutGroup(POSITIONING)] 
+        public float posLerpMult = 1f;
         
         [FoldoutGroup(POSITIONING)]
         public float posXMult = 16;
@@ -114,6 +117,7 @@ namespace Player
         private void Start()
         {
             curTime = boostTimeLength;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         private void Update()
@@ -157,8 +161,7 @@ namespace Player
             }
 
             //Set the follow speed
-            splineFollower.followSpeed = Mathf.Lerp(splineFollower.followSpeed, curMoveSpeed - slowSpeed, Time.deltaTime * valueLerpSpeed);
-            
+            splineFollower.followSpeed = Mathf.Lerp(splineFollower.followSpeed, curMoveSpeed * slowMult, Time.deltaTime * valueLerpSpeed * posLerpMult);
             
             //Bird body movement and rotation
             var xrot = (_mouseInput.normalized.x) * maxRotation;

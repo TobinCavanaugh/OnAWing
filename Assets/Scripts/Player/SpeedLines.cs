@@ -20,7 +20,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            _minMaxCurve.constant = splineBasedBirdController.curMoveSpeed / divisionFac;
+            _minMaxCurve.constant = (splineBasedBirdController.curMoveSpeed * splineBasedBirdController.slowMult) / divisionFac;
             _emissionModule.rateOverTime = _minMaxCurve;
         }
     }
