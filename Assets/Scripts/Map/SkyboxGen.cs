@@ -8,6 +8,7 @@ namespace Map
 {
     public class SkyboxGen : MonoBehaviour
     {
+        #if UNITY_EDITOR
         public Camera camera;
         public RenderTexture renderTexture;
 
@@ -47,5 +48,6 @@ namespace Map
         {
             camera.Render();
         }
+        #endif
     }
 }

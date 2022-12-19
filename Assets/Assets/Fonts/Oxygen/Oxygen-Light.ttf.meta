@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: daec5c31e5070264bb83070685e23dc5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Oxygen
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 80603cad48b8562498b96bc5ff6136c7, type: 3}
+  - {fileID: 12800000, guid: 395261cd1f1778d4d83c9561a840de7f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

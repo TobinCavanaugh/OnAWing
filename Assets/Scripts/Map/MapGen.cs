@@ -34,20 +34,23 @@ namespace Map
             var parent = new GameObject("Map Parent").transform;
             var cloudParent = new GameObject("Cloud Parent").transform;
             
-            for (float i = 0; i < 1f; i += step)
+            for (double i = 0; i < 1f; i += step)
             {
                 var t = (EditorUtility.InstantiatePrefab(islandPrefabs[Random.Range(0, islandPrefabs.Count - 1)]) as GameObject).transform;
                 t.parent = parent;
                 t.position = splineComputer.EvaluatePosition(i) + RandomOffset();
             }
     
-            for (float c = 0; c < 1f; c += cloudStep)
+            for (double c = 0; c < 1f; c += cloudStep)
             {
                 var t =
                     (PrefabUtility.InstantiatePrefab(cloudPrefabs[Random.Range(0, cloudPrefabs.Count - 1)]) as GameObject)
                     .transform;
                 t.parent = cloudParent;
                 t.position = splineComputer.EvaluatePosition(c) + CloudOffset();
+
+                var te = t.eulerAngles;
+                t.eulerAngles = new(te.x, Random.Range(-360, 360), te.z);
             }
                 
         }
