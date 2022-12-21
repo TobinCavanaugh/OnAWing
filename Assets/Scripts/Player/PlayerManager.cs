@@ -36,14 +36,14 @@ namespace Player
                 birdRenderer.materials[i] = invisibleMaterial;
             }
             
-            try
-            {
-                DontDestroyOnLoad(this.gameObject);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-            }
+            // try
+            // {
+            //     DontDestroyOnLoad(this.gameObject);
+            // }
+            // catch (Exception e)
+            // {
+            //     Debug.LogError(e);
+            // }
         }
 
         

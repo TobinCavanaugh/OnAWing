@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using ExternalPropertyAttributes;
+using Sirenix.OdinInspector;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
@@ -18,125 +19,125 @@ public class FoliageGenerator : MonoBehaviour {
         Uniform,
     }
 
-    [BoxGroup("Generation"), Required("Carrier Mesh is required. Unity's standard sphere is a good starting point.")]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), ExternalPropertyAttributes.Required("Carrier Mesh is required. Unity's standard sphere is a good starting point.")]
     [Tooltip("The triangles of this mesh are used for placement of the spawned particles.")]
     [ShowAssetPreview]
     [SerializeField]
     public Mesh carrierMesh;
 
-    [BoxGroup("Generation"), Required("Particle Mesh is required. Unity's standard plane is a good starting point.")]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), ExternalPropertyAttributes.Required("Particle Mesh is required. Unity's standard plane is a good starting point.")]
     [Tooltip("The building block of the foliage. Multiple copies of this mesh are combined in the exported mesh.")]
     [ShowAssetPreview]
     [SerializeField]
     public Mesh particleMesh;
 
-    [BoxGroup("Generation"), Space]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), Space]
     [Tooltip("Scaling applied to the carrier mesh when spawning particles.")]
     public Vector3 carrierScale = Vector3.one;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Tooltip("Scaling applied to each individual particle.")]
     public Vector3 particleScale = Vector3.one;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Tooltip("Randomness of scale applied to each individual particle.")]
     [Range(0, 1)]
     public float particleScaleVariance = 0.2f;
 
-    [BoxGroup("Generation"), Label("Particles"), Space]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), Label("Particles"), Space]
     [Tooltip("The number of particles to generate.")]
     public int numParticles = 250;
 
-    [BoxGroup("Generation"), Label("Placement type"), Space]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), Label("Placement type"), Space]
     [Tooltip("Defines the positions of the carrier mesh at which particles are added. " +
              "'Random' selects random faces on the carrier mesh, 'Uniform' samples the mesh faces sequentially.")]
     public CarrierSampling carrierSampling = CarrierSampling.Random;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Tooltip("'Inflate' the mesh by moving each particle along the carrier mesh normal by this value. " +
              "Negative values result in more compact mesh.")]
     public float offsetAlongNormal = -0.25f;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Tooltip("Defines which particles offset is applied to. The value of 1 means all particles are offset. " +
              "Useful to create branches that stick out of the general foliage shape.")]
     [Range(0, 1)]
-    [EnableIf(nameof(EnableOffsetAlongNormalFraction))]
+    [ExternalPropertyAttributes.EnableIf(nameof(EnableOffsetAlongNormalFraction))]
     [Label("    Fraction Of Particles")]
     public float offsetAlongNormalFraction = 1.0f;
 
-    [BoxGroup("Generation"), Range(0f, 360f)]
+    [ExternalPropertyAttributes.BoxGroup("Generation"), Range(0f, 360f)]
     [Tooltip("How much particle rotations can deviate from carrier mesh normals.")]
     public float particleRotationRange = 90f;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Space]
     [Tooltip("If enabled, the normals are calculated from the generated geometry, resulting in a more physically " +
              "correct, but less stylized look. If disabled, the normals are transferred from a sphere, regardless of " +
              "the model geometry, achieving a cleaner, more \"fluffy\" look.")]
     public bool geometryBasedNormals = false;
 
-    [BoxGroup("Generation")]
+    [ExternalPropertyAttributes.BoxGroup("Generation")]
     [Tooltip("If enabled, the vertices within each particle will have the same normal values. " +
              "Useful to hide plane intersections.")]
     public bool oneNormalPerParticle = false;
 
-    [BoxGroup("Billboard whole object"), Range(0f, 1f)]
+    [ExternalPropertyAttributes.BoxGroup("Billboard whole object"), Range(0f, 1f)]
     [Tooltip("Nudge particles to face 'Bias Toward Rotation' value. Useful for billboard foliage.")]
     public float particleRotationBias = 0f;
 
-    [BoxGroup("Billboard whole object"), EnableIf(nameof(EnableBiasTowardRotation))]
+    [ExternalPropertyAttributes.BoxGroup("Billboard whole object"), ExternalPropertyAttributes.EnableIf(nameof(EnableBiasTowardRotation))]
     [Tooltip("Particles are oriented to this rotation based on 'Particle Rotation Bias'.")]
     public Vector3 biasTowardRotation = Vector3.zero;
 
     private bool EnableBiasTowardRotation => particleRotationBias > 0;
     private bool EnableOffsetAlongNormalFraction => offsetAlongNormal > 0;
 
-    [BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Enable")]
     public bool noiseEnabled = false;
 
-    [EnableIf(nameof(noiseEnabled)), BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.EnableIf(nameof(noiseEnabled)), ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Frequency")]
     public float noiseFrequency = 1f;
 
-    [EnableIf(nameof(noiseEnabled)), BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.EnableIf(nameof(noiseEnabled)), ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Amplitude")]
     public float noiseAmplitude = 1f;
 
-    [EnableIf(nameof(noiseEnabled)), BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.EnableIf(nameof(noiseEnabled)), ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Octaves"), Range(1, 5)]
     public uint noiseOctaves = 1;
 
-    [EnableIf(nameof(noiseEnabled)), BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.EnableIf(nameof(noiseEnabled)), ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Scale")]
     public Vector3 noiseScale = Vector3.one;
 
-    [EnableIf(nameof(noiseEnabled)), BoxGroup("Normal Noise")]
+    [ExternalPropertyAttributes.EnableIf(nameof(noiseEnabled)), ExternalPropertyAttributes.BoxGroup("Normal Noise")]
     [Label("Seed")]
     public uint noiseSeed = 1;
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     [Tooltip("Where in the project the new mesh should be exported. E.g. 'Meshes' will export to 'Assets/Meshes'.")]
     public string folderPath = "Meshes";
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     public string fileNamePrefix = "Quad Tree";
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     public bool appendMeshName = true;
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     public bool appendTakeNumber = false;
 
-    [BoxGroup("Export")]
-    [ShowIf(nameof(appendTakeNumber)), Label("    Take Number")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
+    [ExternalPropertyAttributes.ShowIf(nameof(appendTakeNumber)), Label("    Take Number")]
     public int takeNumber = 1;
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     public bool appendTimestamp = false;
 
-    [BoxGroup("Export")]
+    [ExternalPropertyAttributes.BoxGroup("Export")]
     [Tooltip("Overwrites the exported mesh when any value is changed in this component.")]
     public bool exportOnEdit = false;
 
@@ -146,8 +147,8 @@ public class FoliageGenerator : MonoBehaviour {
         if (exportOnEdit) ExportMesh();
     }
 
-    [Button]
-    private void ExportMesh() {
+    [Sirenix.OdinInspector.Button]
+    public void ExportMesh() {
         // Validate input.
         if (carrierMesh == null || particleMesh == null) {
             return;

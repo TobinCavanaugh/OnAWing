@@ -52,7 +52,7 @@ namespace Player
         public AnimationCurve boostSpeedCurve = AnimationCurve.Linear(0,0, 1, 1);
 
         [SerializeField, FoldoutGroup(BOOSTED), ReadOnly]
-        private float curTime = 0;
+        public float curTime = 0;
 
         #endregion
         

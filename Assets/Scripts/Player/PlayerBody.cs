@@ -11,8 +11,6 @@ namespace Player
 {
     public class PlayerBody : MonoBehaviour
     {
-
-        
         public SplineBasedBirdController splineBasedBirdController;
 
         #region AIR_CURRENT
@@ -34,7 +32,6 @@ namespace Player
         
         [FoldoutGroup(AIR_CURRENT)]
         public ShakePreset boostShake;
-        
 
         #endregion
 
@@ -66,6 +63,12 @@ namespace Player
 
         #endregion
 
+        public float unmarkedBoostMult = 1.4f;
+        public string unmarkedBoostAnimName = "BarrelRoll";
+        public ShakePreset unmarkedBoostShake;
+        public float unmarkedBoostLength = 2f;
+        public CameraFOVPunch cameraFOVPunch;
+
         public UnityEvent featherPickupUE;
         private void Update()
         {
@@ -85,19 +88,30 @@ namespace Player
             //Handles entering air currents
             if (other.TryGetComponent(out AirCurrent airCurrent))
             {
-                _airBoostCurTime = 0;
+                if (airCurrent.unmarked == false)
+                {
+                    _airBoostCurTime = 0;
                 
-                _tweener?.Kill();
-                _tweener = DOVirtual.Vector3(splineBasedBirdController.curOffset,
-                    airCurrent.GetBoostDirection() * airCurrentBoostMult,
-                    airCurrentBoostLengthTime,
-                    x =>
-                    {
-                        splineBasedBirdController.curOffset = x;
-                    })
-                    .SetEase(boostCurve);
+                    _tweener?.Kill();
+                    _tweener = DOVirtual.Vector3(splineBasedBirdController.curOffset,
+                            airCurrent.GetBoostDirection() * airCurrentBoostMult,
+                            airCurrentBoostLengthTime,
+                            x =>
+                            {
+                                splineBasedBirdController.curOffset = x;
+                            })
+                        .SetEase(boostCurve);
 
-                Shaker.GlobalShakers[0].Shake(boostShake);
+                    Shaker.GlobalShakers[0].Shake(boostShake);
+                }
+                else
+                {
+                    splineBasedBirdController.curMoveSpeed = splineBasedBirdController.boostedSpeed * unmarkedBoostMult;
+                    splineBasedBirdController.animator.CrossFade(unmarkedBoostAnimName, .1f);
+                    splineBasedBirdController.curTime = unmarkedBoostLength;
+                    Shaker.GlobalShakers[0].Shake(unmarkedBoostShake);
+                    cameraFOVPunch.CameraPunch(0, true);
+                }
             }
             
             //Handles picking up feathers

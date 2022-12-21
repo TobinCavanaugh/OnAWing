@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace Map
 {
-    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(Collider))]
     public class AirCurrent : MonoBehaviour
     {
         public Vector3 direction;
         public float boostAmount = 2f;
-
-        public BoxCollider collider;
+        public bool unmarked = false;
+        public Collider collider;
 
 
         private void Reset()
