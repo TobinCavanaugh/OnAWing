@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,16 +29,13 @@ public class LevelManager : MonoBehaviour
         Debug.Log($"Loaded scene {scene.name}");
         mapElements.ForEach(x =>
         {
-            if (x.sceneName == scene.name)
-            {
-                x.EnableObjects();
-                x.SetMaterialValues(foliageMaterial, grassMaterial);
-            }
-            else
-            {
-                x.DisableObjects();
-            }
+            x.DisableObjects();
         });
+
+        var goodMap = mapElements.Find(x => x.sceneName == scene.name);
+        goodMap.EnableObjects();
+        goodMap.UpdateFeatherCount();
+        goodMap.SetMaterialValues(foliageMaterial, grassMaterial);
     }
 }
 
@@ -48,16 +45,27 @@ public class MapElement
     public List<GameObject> enableThese;
     public string sceneName;
 
-    [Header("Materials")]
-    public float foliageWindStrength = .06f;
+    [Header("Materials")] public float foliageWindStrength = .06f;
     public float foliageShadowStrength = 0f;
-    
+
     public float grassWindIntensity = .1f;
     public float grassShadowStrength = .056f;
+
+    [Header("Player")]
+    public int featherCount = 0;
 
     public void EnableObjects()
     {
         enableThese.ForEach(x => x.SetActive(true));
+    }
+
+    public void UpdateFeatherCount()
+    {
+        var p = GameObject.FindObjectOfType<PlayerManager>();
+        for (int i = 0; i < featherCount; i++)
+        {
+            p.AddFeather();
+        }
     }
 
     public void SetMaterialValues(Material foliage, Material grass)

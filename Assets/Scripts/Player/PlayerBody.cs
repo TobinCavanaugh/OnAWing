@@ -62,13 +62,7 @@ namespace Player
         
 
         #endregion
-
-        public float unmarkedBoostMult = 1.4f;
-        public string unmarkedBoostAnimName = "BarrelRoll";
-        public ShakePreset unmarkedBoostShake;
-        public float unmarkedBoostLength = 2f;
-        public CameraFOVPunch cameraFOVPunch;
-
+        
         public UnityEvent featherPickupUE;
         private void Update()
         {
@@ -103,14 +97,6 @@ namespace Player
                         .SetEase(boostCurve);
 
                     Shaker.GlobalShakers[0].Shake(boostShake);
-                }
-                else
-                {
-                    splineBasedBirdController.curMoveSpeed = splineBasedBirdController.boostedSpeed * unmarkedBoostMult;
-                    splineBasedBirdController.animator.CrossFade(unmarkedBoostAnimName, .1f);
-                    splineBasedBirdController.curTime = unmarkedBoostLength;
-                    Shaker.GlobalShakers[0].Shake(unmarkedBoostShake);
-                    cameraFOVPunch.CameraPunch(0, true);
                 }
             }
             

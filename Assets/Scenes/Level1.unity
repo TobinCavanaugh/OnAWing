@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.6468049, g: 0.80516773, b: 0.8962264, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.003
+  m_FogDensity: 0.007
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.4261303, g: 0.6387468, b: 0.6792453, a: 1}
@@ -1895,6 +1895,8 @@ MonoBehaviour:
   cloudMaxOffset: 80
   cloudMinOffset: 58.92
   cloudStep: 0.009
+  generateIslands: 1
+  generateClouds: 1
 --- !u!1001 &132718301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32200,18 +32202,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 107.023415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 107.023415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 107.023415
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9451
+      value: -9279.7
       objectReference: {fileID: 0}
     - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: -7.2
       objectReference: {fileID: 0}
     - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1515.9
+      value: -2001.5
       objectReference: {fileID: 0}
     - target: {fileID: 1112316628921342684, guid: 4683abce1715b0c4794bb123dc401637,
         type: 3}
@@ -32247,6 +32264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112316628921342685, guid: 4683abce1715b0c4794bb123dc401637,
+        type: 3}
+      propertyPath: fadeTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1112316628921342685, guid: 4683abce1715b0c4794bb123dc401637,
         type: 3}

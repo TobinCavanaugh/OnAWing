@@ -12,14 +12,22 @@ namespace Map
         [Button]
         public void GenerateLOD()
         {
-            if (TryGetComponent(out LODGroup lodGroup))
+            if (!TryGetComponent(out LODGroup lodGroup))
             {
-
-                lodGroup.SetLODs(new LOD[]
-                {
-                    new LOD(culledPercentage/100f, new []{GetComponent<Renderer>()})
-                });
+                lodGroup = gameObject.AddComponent<LODGroup>();
             }
+            
+            
+            var rend = GetComponent<Renderer>();
+            if (rend is null)
+            {
+                rend = GetComponentsInChildren<Renderer>()[0];
+            }
+            
+            lodGroup.SetLODs(new LOD[]
+            {
+                new LOD(culledPercentage/100f, new []{rend})
+            });
         }
     }
 }
