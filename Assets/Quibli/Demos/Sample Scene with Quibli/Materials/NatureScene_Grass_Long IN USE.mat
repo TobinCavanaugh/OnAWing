@@ -57,7 +57,7 @@ Material:
     - Vector1_9b8301ee900843cabb760acbaf52c930: 0
     - _54ef369afb0741ac878c5a407a2c0130_1: 0
     - _54ef369afb0741ac878c5a407a2c0130_2: 0
-    - _AlphaClipThreshold: 0.624
+    - _AlphaClipThreshold: 0.135
     - _GustEnabled: 1
     - _GustFrequency: 0.5
     - _GustIntensity: 0.209

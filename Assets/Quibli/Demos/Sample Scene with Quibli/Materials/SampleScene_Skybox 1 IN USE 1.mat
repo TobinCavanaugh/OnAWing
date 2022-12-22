@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SampleScene_Skybox 1 IN USE
+  m_Name: SampleScene_Skybox 1 IN USE 1
   m_Shader: {fileID: 4800000, guid: e32cae2a5bbfb41888ef2ba8391ababa, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

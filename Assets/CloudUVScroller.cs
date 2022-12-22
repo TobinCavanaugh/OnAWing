@@ -10,9 +10,11 @@ public class CloudUVScroller : MonoBehaviour
     private float curAmount = 0;
     private void Update()
     {
+        if (cloudMat is null)
+        {
+            return;
+        }
         curAmount += addAmount;
-        //cloudMat.SetTextureOffset("_MainTex", new(curAmount, 0));
         cloudMat.mainTextureOffset = new(curAmount, 0);
-        //cloudMat.SetVector("_Offset", new Vector4(curAmount, 0));    
     }
 }
