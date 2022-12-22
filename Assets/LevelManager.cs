@@ -69,6 +69,12 @@ public class MapElement
     [FoldoutGroup(LEVEL_STUFF)]
     public Gradient foliageGradient;
 
+    [FoldoutGroup(LEVEL_STUFF)] 
+    public Color grassTopColor = new Color(141, 192, 79);
+    
+    [FoldoutGroup(LEVEL_STUFF)]
+    public Color grassBottomColor = new(36, 109, 45);
+
     [Header("Player")]
     [FoldoutGroup(LEVEL_STUFF)]
     public int featherCount = 0;
@@ -91,23 +97,25 @@ public class MapElement
     {
         foliage.SetFloat("Wind_Strength", foliageWindStrength);
         foliage.SetFloat("_ShadowStrength", foliageShadowStrength);
-        Texture2D tex = new Texture2D(256, 1);
+        Texture2D tex = new Texture2D(255, 1);
 
         Color[] colors = new Color[255];
         for (float i = 0; i < 255; i++)
         {
-            colors[(int)i] = foliageGradient.Evaluate(i / 256);
+            //colors[(int)i] = Color.black;
+            
+            colors[(int)i] = foliageGradient.Evaluate(i / 255);
         }
         
-        AssetDatabase.CreateAsset(tex, "texTest.asset");
-        
         tex.SetPixels(colors);
+        tex.Apply();
         
         foliage.SetTexture("_ShadingGradientTexture", tex);
         
         grass.SetFloat("GustIntensity", grassWindIntensity);
         grass.SetFloat("_ShadowStrength", grassShadowStrength);
-        
+        grass.SetColor("_ColorTop", grassTopColor/255f);
+        grass.SetColor("_ColorBottom", grassBottomColor/255f);
     }
 
     public void DisableObjects()

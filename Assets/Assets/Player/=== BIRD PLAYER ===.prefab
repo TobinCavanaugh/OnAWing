@@ -21691,6 +21691,8 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
+    grassTopColor: {r: 0.5529412, g: 0.7490196, b: 0.30980393, a: 1}
+    grassBottomColor: {r: 0.2509804, g: 0.7490196, b: 0.30980393, a: 1}
     featherCount: 0
   - enableThese:
     - {fileID: 5503937448741182729}
@@ -21728,6 +21730,8 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
+    grassTopColor: {r: 141, g: 192, b: 79, a: 1}
+    grassBottomColor: {r: 36, g: 109, b: 45, a: 1}
     featherCount: 1
   - enableThese:
     - {fileID: 748269730194123531}
@@ -21766,30 +21770,33 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
+    grassTopColor: {r: 0.5529412, g: 0.7490196, b: 0.30980393, a: 1}
+    grassBottomColor: {r: 0.2509804, g: 0.7490196, b: 0.30980393, a: 1}
     featherCount: 2
   - enableThese:
-    - {fileID: 748269730194123531}
+    - {fileID: 2756933365349818836}
     - {fileID: 2537896968911019869}
-    sceneName: Level2
+    - {fileID: 4682621513491159905}
+    sceneName: Level3
     foliageWindStrength: 0.45
     foliageShadowStrength: 0
     grassWindIntensity: 0.209
     grassShadowStrength: 0.056
     foliageGradient:
       serializedVersion: 2
-      key0: {r: 0.013003569, g: 0.05660379, b: 0, a: 1}
-      key1: {r: 0.032530908, g: 0.14150941, b: 0, a: 1}
-      key2: {r: 0.15484609, g: 0.2735849, b: 0.04774831, a: 0}
-      key3: {r: 0.43408304, g: 0.6509434, b: 0.23028658, a: 0}
-      key4: {r: 0.6037736, g: 0.5943207, b: 0.49270204, a: 0}
-      key5: {r: 0.2269946, g: 0.3773585, b: 0.087219656, a: 0}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0.03505256, g: 0.09433961, b: 0.01735493, a: 1}
+      key2: {r: 0.043806553, g: 0.0754717, b: 0.01530794, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0.47546616, g: 0.754717, b: 0.2171591, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 1157
       ctime1: 9830
       ctime2: 21781
       ctime3: 34310
-      ctime4: 42405
+      ctime4: 42983
       ctime5: 48766
       ctime6: 48766
       ctime7: 0
@@ -21804,6 +21811,8 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
+    grassTopColor: {r: 0.32941177, g: 0.4509804, b: 0.18039216, a: 1}
+    grassBottomColor: {r: 0, g: 0, b: 0, a: 1}
     featherCount: 2
   foliageMaterial: {fileID: 2100000, guid: 6624acddba61646a8946f0eae277e0b7, type: 2}
   grassMaterial: {fileID: 2100000, guid: 93304eade28ce4f809bd90d2aa6736bf, type: 2}
