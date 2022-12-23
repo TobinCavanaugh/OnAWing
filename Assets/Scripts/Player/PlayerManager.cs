@@ -9,6 +9,7 @@ namespace Player
         public SkinnedMeshRenderer birdRenderer;
         public Material invisibleMaterial;
         public Material wingMaterial;
+        public SplineBasedBirdController splineBasedBirdController;
 
         public int maxFeathers = 6;
         
@@ -17,12 +18,14 @@ namespace Player
 
         public static PlayerManager instance;
 
+        public float featherSpeedIncrease = 5f;
+
 
         private void Awake()
         {
             if (instance != null)
             {
-                Debug.LogError("Duplicate of the playermanager you fuckin troglodyte");
+                Debug.LogError("Duplicate of the playermanager");
             }
             
             instance = this;
@@ -35,15 +38,6 @@ namespace Player
             {
                 birdRenderer.materials[i] = invisibleMaterial;
             }
-            
-            // try
-            // {
-            //     DontDestroyOnLoad(this.gameObject);
-            // }
-            // catch (Exception e)
-            // {
-            //     Debug.LogError(e);
-            // }
         }
 
         
@@ -58,7 +52,7 @@ namespace Player
             }
 
             birdRenderer.materials = mats;
-
+            splineBasedBirdController.defaultSpeed += featherSpeedIncrease;
         }
     }
 }

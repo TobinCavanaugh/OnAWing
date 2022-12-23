@@ -30,6 +30,9 @@ namespace Player
         [FormerlySerializedAs("_curMoveSpeed")] [FoldoutGroup(DEFAULT_MOVEMENT), ReadOnly]
         public float curMoveSpeed = 0f;
 
+        [FoldoutGroup(DEFAULT_MOVEMENT)]
+        public AudioSource wingsFlap;
+
         #endregion
 
         #region BOOSTED
@@ -144,6 +147,7 @@ namespace Player
                     animator.SetBool(DoBoost, true);
                     curMoveSpeed = boostedSpeed;
                     Shaker.GlobalShakers[0].Shake(boostShake);
+                    wingsFlap.Play();
                     //cameraFOVPunch.Punch();
                 }
                 else

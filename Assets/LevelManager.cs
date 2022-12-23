@@ -75,6 +75,10 @@ public class MapElement
     [FoldoutGroup(LEVEL_STUFF)]
     public Color grassBottomColor = new(36, 109, 45);
 
+
+    [FoldoutGroup(LEVEL_STUFF)] 
+    public Vector3 sunPivotRotation = new(50, -30, 0); 
+    
     [Header("Player")]
     [FoldoutGroup(LEVEL_STUFF)]
     public int featherCount = 0;
@@ -114,8 +118,8 @@ public class MapElement
         
         grass.SetFloat("GustIntensity", grassWindIntensity);
         grass.SetFloat("_ShadowStrength", grassShadowStrength);
-        grass.SetColor("_ColorTop", grassTopColor/255f);
-        grass.SetColor("_ColorBottom", grassBottomColor/255f);
+        grass.SetColor("_ColorTop", grassTopColor);
+        grass.SetColor("_ColorBottom", grassBottomColor);
     }
 
     public void DisableObjects()

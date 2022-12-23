@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sunset Skybox 1 IN USE 2
+  m_Shader: {fileID: 4800000, guid: e32cae2a5bbfb41888ef2ba8391ababa, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2630066863424401308}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DirectionPitch: 27
+    - _DirectionYaw: 0
+    - _DstBlend: 0
+    - _Exponent: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Intensity: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.063545756, g: 0.52609116, b: 0.7924528, a: 1}
+    - _Color2: {r: 0.6035511, g: 0.7172993, b: 0.9339623, a: 1}
+    - _Direction: {r: 0, g: 0.8910065, b: 0.4539905, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+--- !u!28 &2630066863424401308
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: z__GradientTex{"mode":0,"colorKeys":[{"color":{"r":0.2340741902589798,"g":0.23166608810424806,"b":0.35849058628082278,"a":1.0},"time":0.1882352977991104},{"color":{"r":1.0,"g":0.7118232250213623,"b":0.0,"a":1.0},"time":0.4617685079574585},{"color":{"r":0.23529411852359773,"g":0.23137255012989045,"b":0.35686275362968447,"a":1.0},"time":0.5411764979362488}],"alphaKeys":[{"alpha":1.0,"time":0.32646676898002627},{"alpha":1.0,"time":1.0}]}
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: a2d888c58cbed2c87365b5f45a5f7ee0
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 1024
+  m_Height: 1
+  m_CompleteImageSize: 4096
+  m_MipsStripped: 0
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMasterTextureLimit: 0
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 4096
+  _typelessdata: ff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3d3c5bff3d3c5bff3e3d5aff3f3d5aff3f3d5aff403e59ff413e59ff423f59ff423f58ff434058ff444058ff444157ff454157ff464157ff464256ff474256ff484356ff494355ff494455ff4a4455ff4b4454ff4b4554ff4c4554ff4d4653ff4d4653ff4e4753ff4f4752ff504852ff504852ff514851ff524951ff524951ff534a50ff544a50ff544b50ff554b50ff564b4fff574c4fff574c4fff584d4eff594d4eff594e4eff5a4e4dff5b4f4dff5b4f4dff5c4f4cff5d504cff5d504cff5e514bff5f514bff60524bff60524aff61524aff62534aff625349ff635449ff645449ff645548ff655548ff665648ff675647ff675647ff685747ff695746ff695846ff6a5846ff6b5945ff6b5945ff6c5945ff6d5a44ff6e5a44ff6e5b44ff6f5b43ff705c43ff705c43ff715d42ff725d42ff725d42ff735e41ff745e41ff755f41ff755f40ff766040ff776040ff776040ff78613fff79613fff79623fff7a623eff7b633eff7c633eff7c643dff7d643dff7e643dff7e653cff7f653cff80663cff80663bff81673bff82673bff82673aff83683aff84683aff856939ff856939ff866a39ff876a38ff876b38ff886b38ff896b37ff896c37ff8a6c37ff8b6d36ff8c6d36ff8c6e36ff8d6e35ff8e6e35ff8e6f35ff8f6f34ff907034ff907034ff917133ff927133ff937233ff937232ff947232ff957332ff957331ff967431ff977431ff977530ff987530ff997530ff9a762fff9a762fff9b772fff9c772fff9c782eff9d782eff9e792eff9e792dff9f792dffa07a2dffa17a2cffa17b2cffa27b2cffa37c2bffa37c2bffa47c2bffa57d2affa57d2affa67e2affa77e29ffa77f29ffa87f29ffa98028ffaa8028ffaa8028ffab8127ffac8127ffac8227ffad8226ffae8326ffae8326ffaf8325ffb08425ffb18425ffb18524ffb28524ffb38624ffb38623ffb48723ffb58723ffb58722ffb68822ffb78822ffb88921ffb88921ffb98a21ffba8a20ffba8a20ffbb8b20ffbc8b1fffbc8c1fffbd8c1fffbe8d1fffbf8d1effbf8e1effc08e1effc18e1dffc18f1dffc28f1dffc3901cffc3901cffc4911cffc5911bffc5911bffc6921bffc7921affc8931affc8931affc99419ffca9419ffca9519ffcb9518ffcc9518ffcc9618ffcd9617ffce9717ffcf9717ffcf9816ffd09816ffd19816ffd19915ffd29915ffd39a15ffd39a14ffd49b14ffd59b14ffd69c13ffd69c13ffd79c13ffd89d12ffd89d12ffd99e12ffda9e11ffda9f11ffdb9f11ffdc9f10ffdda010ffdda010ffdea10fffdfa10fffdfa20fffe0a20fffe1a30effe1a30effe2a30effe3a40dffe4a40dffe4a50dffe5a50cffe6a60cffe6a60cffe7a60bffe8a70bffe8a70bffe9a80affeaa80affeaa90affeba909ffecaa09ffedaa09ffedaa08ffeeab08ffefab08ffefac07fff0ac07fff1ad07fff1ad06fff2ad06fff3ae06fff4ae05fff4af05fff5af05fff6b004fff6b004fff7b104fff8b103fff8b103fff9b203fffab202fffbb302fffbb302fffcb401fffdb401fffdb401fffeb500ffffb500fffeb501fffbb302fff9b203fff6b004fff4af05fff2ad06ffefac07ffedaa09ffeaa90affe8a70bffe6a60cffe3a40dffe1a20effdea10fffdc9f10ffda9e11ffd79c13ffd59b14ffd29915ffd09816ffce9617ffcb9518ffc99319ffc6921affc4901cffc28f1dffbf8d1effbd8c1fffba8a20ffb88921ffb68722ffb38623ffb18425ffae8326ffac8127ffaa8028ffa77e29ffa57d2affa27b2bffa07a2cff9e782dff9b772fff997530ff967431ff947232ff927133ff8f6f34ff8d6e35ff8a6c36ff886b38ff866939ff83683aff81663bff7e653cff7c633dff7a623eff77603fff755f41ff725d42ff705c43ff6e5a44ff6b5945ff695746ff665647ff645448ff625349ff5f514bff5d504cff5a4e4dff584d4eff564b4fff534a50ff514851ff4e4652ff4c4554ff494355ff474256ff454057ff423f58ff403d59ff3d3c5aff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5bff3c3b5b
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
