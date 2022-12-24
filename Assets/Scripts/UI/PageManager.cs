@@ -7,6 +7,15 @@ namespace UI
     public class PageManager : MonoBehaviour
     {
         public List<GameObject> pages;
+        public List<ButtonHelper> buttonHelpers;
+
+        public void ResetButtonHelpers()
+        {
+            buttonHelpers.ForEach(x =>
+            {
+                x.PointerExit();
+            });
+        }
 
         public void SetPage(int pageNum)
         {

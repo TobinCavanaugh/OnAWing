@@ -32,7 +32,6 @@ namespace Player
         public CameraFOVPunch cameraFOVPunch;
 
         public AudioSource wingsUp;
-        public AudioSource wingsFlap;
 
         public void SliderRelax()
         {
@@ -42,8 +41,9 @@ namespace Player
 
         public void SliderUp()
         {
+            wingsUp.Play();
             var v = chargeSlider.DOValue(10, chargeSliderUpTime, false);
-            v.SetEase(chargeUp).OnComplete(wingsUp.Play);
+            v.SetEase(chargeUp);
             
             cameraFOVPunch.CameraPunch(0, true);
             //cameraFOVPunch.Punch(cameraFOVPunch.presets[0], cameraFOVPunch.presets[1]);

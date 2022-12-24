@@ -11,23 +11,19 @@ namespace UI
         public string afterFloat;
         public TextMeshProUGUI tmp;
         public Slider slider;
-        public SensTypes stype;
         public AudioSource clickSource;
-        
+
+
+        private void Awake()
+        {
+            slider.onValueChanged.AddListener(x => SetValue());
+
+        }
+
         private void Start()
         {
             slider = GetComponent<Slider>();
-            slider.onValueChanged.AddListener(x => SetValue());
 
-            
-            if (stype == SensTypes.Focus)
-            {
-                //slider.value = PlayerInput.instance.focusSensitivity;
-            } else if (stype == SensTypes.Mouse)
-            {
-                //slider.value = PlayerInput.instance.mouseSensitivity;
-            }
-            
             SetValue();
         }
 
@@ -52,8 +48,4 @@ namespace UI
         }
     }
 
-    public enum SensTypes
-    {
-        Focus, Mouse
-    }
 }
