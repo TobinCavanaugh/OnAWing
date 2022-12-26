@@ -1,6 +1,10 @@
 using System;
+using DG.Tweening;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
+using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -19,7 +23,11 @@ namespace Player
         public static PlayerManager instance;
 
         public float featherSpeedIncrease = 5f;
-
+        
+        [Header("PauseMenu")]
+        public GameObject pauseMenu;
+        public ButtonHelper[] buttonHelpers;
+        
 
         private void Awake()
         {
@@ -40,7 +48,52 @@ namespace Player
             }
         }
 
-        
+        public float timeLerpTime = .5f;
+        private Tweener _tweener;
+        public void SetTimeScale(float newTime)
+        {
+            //Returning to regular timescale
+            if (newTime > 0)
+            {
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+            }
+
+            buttonHelpers.ForEach(b => b.PointerExit());
+            
+            _tweener?.Kill();
+
+            _tweener = DOVirtual.Float(Time.timeScale, newTime, timeLerpTime, x =>
+            {
+                Time.timeScale = x;
+            });
+        }
+
+        public void LoadScene(int sceneIndex)
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                //Full speed
+                if (Time.timeScale > .5f)
+                {
+                    SetTimeScale(0);
+                }
+                else
+                {
+                    SetTimeScale(1);
+                }
+            }
+        }
+
+
         public void AddFeather()
         {
             var mats = birdRenderer.materials;

@@ -46,11 +46,16 @@ public class SettingsMenu : MonoBehaviour
         Screen.resolutions.ForEach(x =>
         {
             var res = new TMP_Dropdown.OptionData($"{x.width} x {x.height}");
-            resolutionDropDown.options.Add(res);
+
+            if (!resolutionDropDown.options.Any(r => r.text == res.text))
+            {
+                resolutionDropDown.options.Add(res);    
+            }
         });
 
         resolutionDropDown.value = Screen.resolutions.ToList().IndexOf(Screen.currentResolution);
     }
+
 
     private FullScreenMode[] _fullScreenModes = new[]
     {
@@ -73,11 +78,26 @@ public class SettingsMenu : MonoBehaviour
 
     public void UpdateResolution(int index)
     {
-        //_resolution = Screen.resolutions[index];
-        //Debug.Log(index + "/" + _resolutions.Count );
+        Resolution r = new();
 
-        _resolution = Screen.resolutions[index];
-        RefreshScreen();
+        var resolutions = Screen.resolutions;
+        List<Resolution> newResolutions = new();
+
+        resolutions.ForEach(r =>
+        {
+            if (!newResolutions.Any(nr => nr.height == r.height && nr.width == r.width))
+            {
+                newResolutions.Add(r);
+            }
+        });
+
+        //if (!resolutionDropDown.options.Any(r => r.text == res.text))
+        //{
+        //    resolutionDropDown.options.Add(res);    
+        //}
+        
+        _resolution = newResolutions[index];
+        //RefreshScreen();
     }
 
     public void SetFullscreenMode(int index)
@@ -86,8 +106,29 @@ public class SettingsMenu : MonoBehaviour
         _fullScreenMode = _fullScreenModes[index];
     }
 
+    private bool _doVsync = true;
+    public void ToggleVsync(bool state)
+    {
+        _doVsync = state;
+    }
+
+    private int _qualityLevel = 2;
+    public void ChangeQualityLevel(int index)
+    {
+        _qualityLevel = index;
+    }
+
     public void RefreshScreen()
     {
+        Debug.Log($"W:{_resolution.width} H:{_resolution.height} F:{_fullScreenMode.ToString()} RR:{refreshRate}");
         Screen.SetResolution(_resolution.width, _resolution.height, _fullScreenMode, refreshRate);
+
+        int vSync = 0;
+        if (_doVsync)
+        {
+            QualitySettings.vSyncCount = vSync;
+        }
+        
+        QualitySettings.SetQualityLevel(_qualityLevel);
     }
 }

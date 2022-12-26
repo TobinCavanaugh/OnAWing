@@ -58,6 +58,7 @@ namespace UI
             base.Activate();
     
             reference.DOKill();
+            
             Sequence s = DOTween.Sequence();
             s.Append(reference.DOScale(newScale, tweenTime));
         }

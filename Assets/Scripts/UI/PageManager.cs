@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,11 @@ namespace UI
     {
         public List<GameObject> pages;
         public List<ButtonHelper> buttonHelpers;
+
+        private void LateUpdate()
+        {
+            Time.timeScale = 1f;
+        }
 
         public void ResetButtonHelpers()
         {

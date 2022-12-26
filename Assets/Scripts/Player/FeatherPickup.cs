@@ -24,7 +24,7 @@ namespace Player
             if (hasBeenPickedUp)
             {
                 transform.parent = target.parent;
-                
+                transform.DOLocalMove(Vector3.zero, pickupScaleTime).SetEase(pickupScaleCurve);
                 transform.DOScale(Vector3.zero, pickupScaleTime).SetEase(pickupScaleCurve).OnComplete(() =>
                 {
                     transform.gameObject.SetActive(false);

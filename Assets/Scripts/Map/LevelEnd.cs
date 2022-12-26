@@ -18,7 +18,7 @@ public class LevelEnd : MonoBehaviour
         if (other.TryGetComponent(out PlayerBody playerBody))
         {
             uiBlocker.DOColor(fadeColor, fadeTime).OnComplete(() => StartCoroutine(WaitThenLoad())).SetEase(fadeCurve);
-            
+            GameObject.Find("Audio Source - Music").GetComponent<AudioSource>().DOFade(0, fadeTime);
         }
     }
 
