@@ -20,3 +20,16 @@ https://youtu.be/iUdTGgjIk0o
 ![Screenshot 2022-12-26 155829](https://user-images.githubusercontent.com/71297845/209590369-1c542ad3-fbca-4cd2-9efd-be2847505d9b.png)
 
 ![Screenshot 2022-12-26 155848](https://user-images.githubusercontent.com/71297845/209590371-b483b0e6-adc7-438e-814c-61b26760eb95.png)
+
+
+Credits:
+
+This game was made by me (Tobin Cavanaugh)!
+I made it in just under 2 weeks.
+It was pretty difficult, im not gonna lie.
+I learned a lot while working on this project. Its all boring stuff though, like getting better acquainted with shader graph and URP in general
+I think that this game came out as well as it could given the constricted timeline, though I do have a few things I wish I could've polished more.
+This game started off as a rage game where you had to control each of the birds wings individually, I soon realized that that was a pain to try and program, and decided to go in a more artistic direction.
+I took alot of inspiration from studio ghibli stuff, mainly on the clouds and the color pallete, though I have no chance of reaching their level of artistry.
+I hope you enjoyed the game!
+Music by Kai Engel, its in his Sustains album
